@@ -1,0 +1,94 @@
+:root {
+  --muted: #6b7280;
+  --card: #ffffff;
+  --border: #e5e7eb;
+}
+
+.cl-hero {
+  padding: 1.25rem 1.25rem;
+  border: 1px solid var(--border);
+  background: linear-gradient(120deg, #f6f8ff 0%, #ffffff 55%, #f6f8ff 100%);
+  border-radius: 14px;
+}
+
+.cl-hero h1 {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.cl-subtle {
+  color: var(--muted);
+}
+
+.cl-card {
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 14px;
+  padding: 1rem 1rem;
+}
+
+.cl-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.cl-span-4 { grid-column: span 4; }
+.cl-span-6 { grid-column: span 6; }
+.cl-span-12 { grid-column: span 12; }
+
+.cl-kpi {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+}
+
+.cl-kpi .label {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.35rem;
+}
+
+.cl-kpi .value {
+  font-size: 1.35rem;
+  font-weight: 650;
+  line-height: 1.1;
+}
+
+.cl-step {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+  border-radius: 14px;
+  padding: 1rem 1rem;
+  height: 100%;
+}
+
+.cl-step .title {
+  font-weight: 650;
+  font-size: 1.05rem;
+  margin: 0 0 0.35rem 0;
+}
+
+.cl-step .desc {
+  color: var(--muted);
+  margin: 0;
+}
+
+.cl-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0.5rem 0 1rem 0;
+}
+
+.cl-pill {
+  display: inline-block;
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  margin-right: 0.35rem;
+  font-size: 0.85rem;
+  color: #111827;
+}
