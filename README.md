@@ -12,7 +12,6 @@ End-to-end unsupervised ML app with a clean UI: upload a CSV, pick features, tra
 
 ## Local run
 ```bash
-make install
 make run
 ```
 Then open `http://localhost:8501`.
@@ -29,7 +28,7 @@ docker run --rm -p 8501:8501 paldoc4/kubo_pro:01
 ```
 
 ## GitHub
-Clone:
+Repo:
 ```bash
 git clone https://github.com/palak-pal/YT-k8s-mini-project.git
 cd YT-k8s-mini-project
@@ -44,7 +43,7 @@ git push
 
 ### GitHub Actions (optional)
 - CI runs tests on every PR/push to `main`.
-- Docker publish runs when you push a git tag like `v0.1.0` and pushes:
+- Docker publish runs when you push a tag like `v0.1.0` and pushes:
   - `paldoc4/kubo_pro:<tag>`, `paldoc4/kubo_pro:latest`, `paldoc4/kubo_pro:sha-<sha>`
 
 Secrets required (GitHub repo → Settings → Secrets and variables → Actions):
