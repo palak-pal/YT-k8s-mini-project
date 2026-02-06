@@ -3,11 +3,16 @@ kind: Service
 metadata:
   name: cluster-lens
   namespace: default
+  labels:
+    app.kubernetes.io/name: cluster-lens
+    app.kubernetes.io/component: web
 spec:
   selector:
-    app: cluster-lens
+    app.kubernetes.io/name: cluster-lens
+    app.kubernetes.io/component: web
   ports:
     - name: http
       port: 80
       targetPort: 8501
   type: NodePort
+

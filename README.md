@@ -57,10 +57,12 @@ docker build -t paldoc4/kubo_pro:01 .
 docker push paldoc4/kubo_pro:01
 ```
 
-2. Apply manifests (namespace is `default`):
+2. Apply manifests (each container runs in its own Pod; namespace is `default`):
 ```bash
-kubectl apply -f k8s/deployment.yaml
-kubectl apply -f k8s/service.yaml
+kubectl apply -f k8s/configmap.yaml
+kubectl apply -f k8s/web-deployment.yaml
+kubectl apply -f k8s/web-service.yaml
+kubectl apply -f k8s/worker-deployment.yaml
 # Optional (requires an ingress controller enabled):
 kubectl apply -f k8s/ingress.yaml
 ```

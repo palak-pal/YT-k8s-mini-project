@@ -1,29 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cluster-lens
+  name: cluster-lens-web
   namespace: default
+  labels:
+    app.kubernetes.io/name: cluster-lens
+    app.kubernetes.io/component: web
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: cluster-lens
+      app.kubernetes.io/name: cluster-lens
+      app.kubernetes.io/component: web
   template:
     metadata:
       labels:
-        app: cluster-lens
+        app.kubernetes.io/name: cluster-lens
+        app.kubernetes.io/component: web
     spec:
       containers:
-        - name: cluster-lens
+        - name: web
           image: paldoc4/kubo_pro:01
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8501
-          env:
-            - name: STREAMLIT_SERVER_PORT
-              value: "8501"
-            - name: STREAMLIT_SERVER_ADDRESS
-              value: "0.0.0.0"
+            - name: http
+              containerPort: 8501
+          envFrom:
+            - configMapRef:
+                name: cluster-lens-config
           readinessProbe:
             httpGet:
               path: /
